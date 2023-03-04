@@ -1,2 +1,8 @@
-- name: Cloud Functions Deploy
+- name: Deploy a Cloud Function
+  id: deploy-function
   uses: google-github-actions/deploy-cloud-functions@v1
+  with:
+    name: crawl
+    runtime: python311
+    project: ${{ secrets.gcp_project }}
+    credentials: ${{ secrets.gcp_credentials }}
